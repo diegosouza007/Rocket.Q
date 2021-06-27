@@ -8,13 +8,15 @@ module.exports = {
         const pass = req.body.password;
         let roomId = '';
         let isRoom = true;
+        
+        // Fução para gerar o ID das salas criadas
 
         while (isRoom) {
             for (let i = 0; i < 6; i++) {
                 roomId += Math.floor(Math.random() * 10).toString();
             }
 
-            // Verificar se o número da sala já existe no banco antes de adicionar
+            // Verificar se o número da sala já existe no banco de dados antes de adicionar novo
 
             const roomsExistIds = await db.all(`SELECT id FROM rooms`);
             isRoom = roomsExistIds.some(roomsExistId => roomsExistId === roomId);
@@ -53,11 +55,14 @@ module.exports = {
             }
         }
 
-        //Para usar no EJS da página para renderizar o número da sala e as questões
+        // Para usar no EJS das páginas para renderizar o conteúdo desejado
+
         res.render("room", {roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions});
+
     },
 
     enter(req, res) {
+        
         const roomId = req.body.roomId;
         
         res.redirect(`/room/${roomId}`);
