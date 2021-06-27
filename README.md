@@ -8,4 +8,4 @@ O objetivo da aplicação é criar um site para pessoas criarem salas e comparti
 
 # Preview
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/11907759/123560932-c3bfac80-d77b-11eb-82c4-31e50263c88e.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/11907759/123561486-e8695380-d77e-11eb-9406-d4aedcaf2940.gif)
